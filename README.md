@@ -14,7 +14,37 @@ through from start to finish.
 
 ## Building and Running
 
-More here to come.
+Currently, this project only supports building on Linux. There may be plans to
+add Windows support in the future, but probably not for a while. Let's just say
+that Windows and MacOS builds are pretty far down on the priority list.
+
+In order to build this project, you need the following things:
+
+* CMake
+* Make or Ninja
+* A C++ compiler
+* SDL2 development files
+
+If you're on Ubuntu, the command below should fetch all of those for you:
+
+```sh
+sudo apt install cmake ninja-build g++ libsdl2-dev
+```
+
+Once you've got all of the build dependencies installed, you can generate the
+build files, compile, and run with the series of commands below:
+
+```sh
+cmake -S . -B build
+ninja -C build
+build/breakout
+```
+
+And you should be good! If you have any problems building, feel free to submit
+an issue. If you're using a Linux distribution other than Ubuntu or a
+derivative thereof, I trust that you are smart enough to figure out what
+packages to install. Every mainline Linux distribution packages the required
+software and development files.
 
 ## Roadmap
 
@@ -22,9 +52,13 @@ I'm taking a different approach with this project than I normally do. The
 README.md file (the one you're reading) will contain a checklist of items that
 I can implement one at a time, just to keep me organized and focused.
 
-* [ ] Get a window up
-* [ ] Display a triangle
-* [ ] Display an image
+* [X] Set up hello world
+* [X] Get a window up
+* [X] Add error handling
+* [X] Create an OpenGL context
+* [X] Display a triangle
+* [X] Display an image
+* [ ] Flip image right-side-up
 
 ## License Information
 
