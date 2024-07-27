@@ -180,7 +180,7 @@ int main() {
 
   glUseProgram(program);
 
-  ImageData data = load_png_data("../res/textures/awesomeface.png");
+  ImageData data = load_png_data("res/textures/awesomeface.png");
 
   GLuint texture;
   glGenTextures(1, &texture);
@@ -198,6 +198,8 @@ int main() {
   // TODO: Error handling
 
   glClearColor(0.53f, 0.91f, 0.28f, 1.0f);
+  glEnable(GL_BLEND);
+  glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
   bool window_should_close = false;
   while (!window_should_close) {

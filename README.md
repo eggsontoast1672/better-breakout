@@ -52,13 +52,9 @@ I'm taking a different approach with this project than I normally do. The
 README.md file (the one you're reading) will contain a checklist of items that
 I can implement one at a time, just to keep me organized and focused.
 
-* [X] Set up hello world
-* [X] Get a window up
-* [X] Add error handling
-* [X] Create an OpenGL context
-* [X] Display a triangle
-* [X] Display an image
-* [ ] Flip image right-side-up
+* [ ] Clean up main file
+* [ ] Render multiple images
+* [ ] Use arrow keys to move around an image
 
 ## License Information
 
