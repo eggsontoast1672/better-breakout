@@ -72,10 +72,10 @@ ImageData load_png_data(const std::string &path) {
 
   std::vector<std::uint8_t> bytes;
 
-#define LOAD_PNG_DATA_LOOP_BACKWARD 0
+#define LOAD_PNG_DATA_LOOP_BACKWARD 1
 #if LOAD_PNG_DATA_LOOP_BACKWARD
-  for (std::size_t y = surface->h - 1; y >= 0; y--) {
-    for (std::size_t x = 0; x < surface->w; x++) {
+  for (int y = surface->h - 1; y >= 0; y--) {
+    for (int x = 0; x < surface->w; x++) {
       std::uint32_t color = get_pixel(surface, x, y);
       std::uint8_t r, g, b, a;
       SDL_GetRGBA(color, surface->format, &r, &g, &b, &a);
@@ -86,8 +86,8 @@ ImageData load_png_data(const std::string &path) {
     }
   }
 #else
-  for (std::size_t y = 0; y < surface->h; y++) {
-    for (std::size_t x = 0; x < surface->w; x++) {
+  for (int y = 0; y < surface->h; y++) {
+    for (int x = 0; x < surface->w; x++) {
       std::uint32_t color = get_pixel(surface, x, y);
       std::uint8_t r, g, b, a;
       SDL_GetRGBA(color, surface->format, &r, &g, &b, &a);
