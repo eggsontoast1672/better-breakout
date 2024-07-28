@@ -102,6 +102,8 @@ ImageData load_png_data(const std::string &path) {
   return {bytes, surface->w, surface->h};
 }
 
+// Don't change the signature of main even though argc and argv aren't used. SDL
+// needs this on windows. FML.
 int main(int argc, char *argv[]) {
   if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
     std::cerr << "Failed to initialize SDL: " << SDL_GetError() << '\n';
@@ -130,6 +132,13 @@ int main(int argc, char *argv[]) {
   if (gladLoadGLLoader(SDL_GL_GetProcAddress) == 0) {
     std::cerr << "Failed to initialize glad\n";
   }
+
+  // Debug output some crap
+
+  std::cerr << "Vendor: " << glGetString(GL_VENDOR) << '\n';
+  std::cerr << "Renderer: " << glGetString(GL_RENDERER) << '\n';
+  std::cerr << "OpenGL version: " << glGetString(GL_VERSION) << '\n';
+  std::cerr << "GLSL version: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << '\n';
 
   // Triangle stuff
 
