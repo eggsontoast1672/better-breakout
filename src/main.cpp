@@ -4,8 +4,8 @@
 #include <iostream>
 #include <vector>
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
+#include <SDL.h>
+#include <SDL_image.h>
 
 #include "glad/glad.h"
 
@@ -102,7 +102,7 @@ ImageData load_png_data(const std::string &path) {
   return {bytes, surface->w, surface->h};
 }
 
-int main() {
+int main(int argc, char *argv[]) {
   if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
     std::cerr << "Failed to initialize SDL: " << SDL_GetError() << '\n';
   }
